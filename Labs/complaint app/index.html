@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Complaint app</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+            <div class="app">
+        <h2>Where Can We Cause Trouble Today?</h2>
+
+
+            <div class="complaints-search-bar">
+               
+            <input id="num-complaints-input" type="text" placeholder="# of complaints">
+                
+                    <button onclick="lookupComplaint('BROOKLYN')">Brooklyn</button>
+                    <button onclick="lookupComplaint('BRONX')">Bronx</button>
+                    <button onclick="lookupComplaint('MANHATTAN')">Manhattan</button>
+                    <button onclick="lookupComplaint('QUEENS')">Queens</button>
+                    <button onclick="lookupComplaint('STATEN ISLAND')">Staten Island</button>
+            </div>
+       
+        <div class="complaints-search-output">
+            <div class="complaint">
+                <div class="complaint-title">
+                   <h3>Complaint</h3>
+                   <button onclick="">What did the police do?</button>
+                   </div>
+            
+                <div class="complaint-response">
+                    <h4>Lorem ipsum dolor sit pariatur rerum at magni fugiat quas esse?</h4>
+                </div>
+                </div>
+            </div>
+        </div>
+        <script src="./javascript/index.js"></script>
+    </body>
+</html>

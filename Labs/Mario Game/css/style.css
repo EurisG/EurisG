@@ -1,0 +1,101 @@
+@keyframes attack {
+    0% {
+        transform: translateX(0vw);
+        /* border: solid red; */
+    }
+
+    50% {
+        /* border:solid white; */
+        transform: translateX(-50vw);
+    }
+
+    100%{
+        /* border:solid yellow; */
+        transform: translateX(-100vw);
+    }
+
+}
+
+@keyframes jump {
+    0% {
+        transform:  translateY(0vh);
+    }
+
+    50% {
+        transform: translateY(-25vh)
+    }
+
+    100% {
+        transform: translateY(0vh);
+    }
+}
+
+
+
+body {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Nintendo_Gameboy.jpg/1200px-Nintendo_Gameboy.jpg');
+    background-size: cover;
+   
+
+}
+.screen {
+    border: solid black;
+    background-image: url('https://cdn.wallpapersafari.com/80/71/JKChO6.gif');
+    background-size: cover;
+    height: 58vh;
+    margin: 35px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.mario{
+    /* border: solid red; */
+    border-radius: 50%;
+    margin-top: 65%;
+    height: 80px;
+    width: 80px;
+}
+
+.goomba{
+    /* border: solid rgb(78, 45, 45); */
+    border-radius: 50%;
+    margin-top: 65%;
+    height: 80px;
+    width: 80px;
+}
+
+.plumber , .goom {
+    height: 70px;
+    width:100%;
+    border-radius: 50%;
+}
+
+.initiateAttack {
+    animation: attack 6s ease-in infinite;
+}
+
+.starter{
+    margin: 20px;
+    width: 50%;
+    text-align: center;
+}
+
+.bunnies{
+    animation: jump 1s ease-in 1 ;
+}
+
+.jumpBox {
+    width: 100px;
+    margin: 30px;
+    cursor: pointer;
+    
+}
+
+
+.jumpBox:hover {
+    width: 100px;
+    margin: 30px;
+    cursor: pointer;
+    -webkit-box-shadow: 5px 5px 35px 8px #FF4F25; 
+    box-shadow: 5px 5px 35px 8px #FF4F25;
+}

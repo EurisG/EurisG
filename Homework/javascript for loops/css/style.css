@@ -1,0 +1,195 @@
+body{
+   background: linear-gradient( #118DEA 0%, #C5C2BB 100%);
+}
+
+.headerContainer{
+    background-color: rgb(255, 255, 255);
+    margin: 15px;
+    border: solid black;
+    border-style:ridge;
+    border-radius: 20px;
+    border-width: 5px;
+    border-color: rgb(223, 219, 219);
+}
+
+.headerTitle,
+ .headerMotto{
+    text-align: center;
+    margin: 10px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    /* background-color: #f1e6c9; */
+    border: solid #666666;
+    border-style:double;
+    border-width: 7px;
+    padding: 5px;
+    margin-left: 330px;
+    margin-right: 330px;
+    letter-spacing: 2px;
+    font-size: 35px;
+    /* color: #FFFFFF; */
+    color: transparent;
+    background: #666666;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
+ }
+.headerTitle{
+    margin-top: 20px;
+}
+
+ .headerMotto{
+     border: none;
+     font-size: 20px;
+ }
+.sneaker{
+    margin: 1em;
+    width: 20%;
+    height: 23%;
+    margin-left: 40%;
+}
+
+.navbar{
+    background-color: rgba(90, 150, 190, 0.514);
+  border: solid white;
+  border-width: 7px;
+  border-radius: 5px;
+  border-style: ridge;
+  margin: auto 20px;
+  /* margin-left: 330px; */
+  width: auto 1em;
+  /* width:780px; */
+  margin-top: 20px;
+  padding: 10px;
+}
+
+a{
+    color: white;
+    margin: 10px;
+    
+}
+
+input{
+    float: right;
+    margin-right:auto 20px;
+    padding: 5px;
+    border: solid black;
+}
+.shoeContainer{
+    border: solid rgb(223, 219, 219);
+    border-width: 5px;
+    margin: 70px;
+    width: auto 0;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+p{
+    font-size: large;
+    font-weight: bold;
+    margin: 30px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+.nike{
+    border: solid black;
+    border-style:double;
+    border-width: 7px;
+    margin: 30px;
+    height: 200px;
+    width: 350px;
+    background-image: url(../images/nike.jpeg);
+    background-size:cover;
+    display: inline-block;
+}
+
+.yzy{
+    border: solid black;
+    border-style:double;
+    border-width: 7px;
+    margin: 30px;
+    height: 200px;
+    width: 350px;
+    background-image: url(../images/YEEZY-Logotipo.jpg);
+    background-size:cover;
+    display: inline-block;
+}
+
+.jordan{
+    border: solid black;
+    background-color: rgb(255, 255, 255);
+    border-style:double;
+    border-width: 7px;
+    margin: 30px;
+    margin-top: 20px;
+    height: 200px;
+    width: 350px;
+    background-image: url(../images/jordan.jpeg);
+    background-size: 95%;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+
+.adidas{
+    border: solid black;
+    border-style:double;
+    border-width: 7px;
+    margin: 30px;
+    margin-top: 20px;
+    height: 200px;
+    width: 350px;
+    background-image: url(../images/adidas.jpeg);
+    background-size:cover;
+    display: inline-block;
+}
+
+.puma{
+    border: solid black;
+    background-color: white;
+    border-style:double;
+    border-width: 7px;
+    margin: 30px;
+    margin-top: 20px;
+    height: 200px;
+    width: 350px;
+    background-image: url(../images/puma.jpeg);
+    background-size: 80%;
+    display: inline-block;
+    background-repeat: no-repeat;
+}
+
+button{
+color:white;
+background-color: #1e1e1f;
+/* margin-left: 40px; */
+padding: 10px;
+border-radius: 40px;
+
+}
+
+button:hover{
+    background-color: lightgreen;
+}
+
+#shoeBtn{
+    display:inline-flex;
+    background-color: #181717;
+}
+
+#shoeBtn:hover{
+    background-color: lightgreen;
+}
+
+.footer{
+    background-color: black;
+    padding: 10px;
+    opacity: 75%;
+   
+}
+
+.me{
+    text-align: center;
+    color: white;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 130%;
+}

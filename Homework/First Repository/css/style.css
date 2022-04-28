@@ -1,0 +1,138 @@
+body{
+    background-color: rgb(235, 241, 210);
+    border: solid black;
+}
+
+.header{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    background-position: 50%;
+    height: 150px;
+    border: solid black;
+}
+
+h1,
+  h2{
+  text-align: center;
+  letter-spacing: 2px;
+  }
+
+.navContainer{
+    border: solid rgb(245, 167, 167);
+    border-style:outset;
+    border-width: 4px;
+    margin: 30px;
+    height: 40px;
+    background-color: rgb(31, 31, 31);
+    display: flex
+}
+
+button{
+    height: 30px;
+    width: 100px;
+    margin: 5px 13px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+button:hover{
+    background-color: lightgreen;
+}
+
+a{
+  color: purple;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.bio{
+    letter-spacing: 1px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-style:double;
+    padding: 15px;
+    line-height: 30px;
+    text-align: center;
+    margin: 35px;
+    border-width: 5px;
+  }
+ 
+
+  .things{
+      border: solid black;
+      border-style: double;
+      border-width: 5px;
+      margin-left: 50px;
+      width: 25%;
+  }
+
+  .favorite{
+      font-weight: bold;
+  }
+
+  li,
+    h3{
+      margin-left: 5px ;
+  }
+
+  .feedback{
+    padding: 9px;
+    background-color: white;
+    font-style: italic;
+    border-style: double;
+    font-weight: 900px;
+    height: 440px;
+    width: 250px;
+    border-color: #000000;
+    border-width: 10px;
+    box-sizing: content-box;
+    margin: 50px;
+    line-height: 25px;
+    display: block;
+  }
+
+  input[type=button]{
+    color: black;
+    background-color: whitesmoke;
+    transition-duration: 700ms;
+    padding: 5px;
+    border-style:double;
+  }
+
+  input:hover{
+    background-color: lightgreen;
+  }
+
+  img{
+    max-width: 240px;
+    max-height: 290px;
+    margin: 5px;
+    border: solid black;
+  }
+  
+  .photo{
+   float: right;
+  max-width: 340px;
+  max-height: 390px;
+  margin: 55px 25px;
+  border: solid;
+  border-color: #000000;
+  border-width: 6px;
+  border-style: double;
+  }
+
+  .bottom{
+      text-align: center;
+      background-color: black;
+      color: white;
+      margin-top: 200px;
+      background-position: 50%;
+      height: 70px;
+  }
+   
+
+
+  #foot{
+    text-align: center;
+    letter-spacing: 2px;
+   
+  }

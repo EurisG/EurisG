@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Euris Guessing Game</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+       <!-- header  -->
+        <div class="header">
+            <h1>Euris' Guessing Game</h1>
+        </div>
+
+        <!-- where you know if you got answer right or wrong -->
+        <!-- <div class="answer-display"></div> -->
+
+        <!-- score display -->
+        <div class="score-board">
+            <h3 >Score :<span class="points">0</span></h3>
+
+        </div>
+
+        <div class="instruction">
+            <h2>Instructions</h2>
+            <p>Pick a card and answer question. <br> If correct you get 1 point! <br> 
+                If wrong you lose 1 point! <br> Enjoy!</p>
+        </div>
+        <!-- Cards dislay  -->
+      <div class="cards">
+          <div onClick="toggleCardOne()" class="one">Card 1</div>
+          <div OnClick="toggleCardTwo()" class="two">Card 2</div>
+          <div OnClick="toggleCardThree()" class="three">Card 3</div>
+      </div>
+        
+        <script src="./javascript/index.js"></script>
+    </body>
+</html>

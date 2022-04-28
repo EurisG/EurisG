@@ -1,0 +1,166 @@
+@keyframes alien-attack{
+    from
+     {
+        transform: translateX(0%)
+    }
+    50% {
+        transform: translateX(60%)
+    }
+    to {
+        transform: translateX(0%)
+    }
+    
+}
+
+@keyframes player-attack{
+    from{
+        transform: translateX(0%);
+    }
+    50% {
+        transform: translateX(60%)
+    }
+   to {
+        transform: translateX(0%)
+    }
+}
+
+body{
+    background-color: black;
+    /* background-image: url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2386&q=80');
+    background-size: cover; */
+}
+
+.gameboard {
+    border: 1px solid rgb(0, 0, 0);
+    height: 60vh;
+    margin: 1em;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(16, 14, 14);
+    background-image: url('https://img1.picmix.com/output/stamp/normal/6/0/1/6/1556106_f227e.gif');
+    background-size:contain;
+
+}  
+h1{
+    color: white;
+    margin: 1em;
+    text-shadow: 0 0 10px #FFFFFF, 2px 2px 2px rgba(208,24,24,0);
+}
+
+p{
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 0 0 10px #fefefe, 2px 2px 2px rgba(37, 68, 241, 0);
+}
+
+.legend {
+    border: solid blue;
+    border-radius: 22px;
+    margin: 2em;
+    height: 20vh;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    width: 70%;
+}
+
+/* spaceships container */
+
+.us {
+    border: solid lime;
+    margin: 1em;
+    width: 160px;
+    
+}
+
+
+.them{
+    /* border: solid salmon; */
+    margin: 1em;
+    width: 90px;
+}
+
+/* buttons */
+.player-attack , .alien-attack {
+    padding: 10px;
+    border-radius: 20px ;
+}
+
+.player-attack:hover {
+    padding: 10px;
+    border: 1px solid rgb(74, 229, 35);
+    border-radius: 0px ;
+    -webkit-box-shadow: 5px 5px 34px 9px #e55050; 
+    box-shadow: 5px 5px 34px 9px #60e224;
+    font-weight: bold;
+    cursor: pointer;
+
+}
+
+.alien-attack:hover {
+    padding: 10px;
+    border: 1px solid rgb(229, 35, 35);
+    border-radius: 0px ;
+    -webkit-box-shadow: 5px 5px 34px 9px #e55050; 
+    box-shadow: 5px 5px 34px 9px #FF0000;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.playerScore , .alienScore {
+    /* border: solid yellow; */
+    border-radius: 22px;
+    margin: 1em;
+    padding: 1em;
+    color: white;
+    height: 25px;
+}
+
+/* spaceships */
+
+.ship{
+    height: 50px;
+    margin-top: 20vh;
+    /* position: relative; */
+    animation: alienAttack 3s ease-in;
+}
+
+.alienContainer {
+    /* border: solid white; */
+    height: 42vh;
+    margin: 1em;
+    /* display: flex; */
+    justify-content: space-between;
+    color: lime;
+    padding: 1em;
+    width: 30px;
+}
+
+.alien{
+    height: 60px;
+    /* position: relative; */
+    /* margin-top: 10vh; */
+    
+}
+
+.healthbar {
+    border: solid yellow;
+    height: 3px;
+    border-width: 2px;
+    display: flex;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.fifty{
+    background-color: lightgreen;
+    width: 50%;
+}
+
+.hundred{
+    background-color: lightgreen;
+    width: 50%;
+}
+
+/* .startAlienAttack {
+    animation: alienAttack 1s ease-in infinite;
+} */

@@ -1,0 +1,167 @@
+/* keyFrames */
+
+@keyframes thisIsAKeyFrame {
+    from{ 
+        transform: translateX(0vw);
+    }
+     to{
+         transform: translateX(100vw);
+     }
+}
+
+
+
+
+
+
+
+
+/* Desktop */
+
+@media (max-width: 2150px){
+    body{
+        background-color:lightgreen ;
+    }
+    .title{
+        border: solid black;
+        border-width: 7px;
+        margin-right:  70%;
+        padding: 5px;
+        color: rgb(0, 0, 0);
+        animation: thisIsAKeyFrame 10s ease-in-out infinite;
+    }
+    .parent{
+        background-color: lightslategray;
+        height: 400px;
+        width: 400px;
+        border: solid black;
+        border-width: 5px;
+    }
+    .child{
+        background-color: lightyellow;
+        height: 50%;
+        width: 50%;
+        transition: 1s;
+    }
+    .parent:hover{
+        background-color: rgb(61, 62, 64);
+        transition: 1s;
+        border: solid rgb(243, 77, 77);
+        border-width: 5px;
+    }
+
+    .parent:hover .child{
+        background-color: lightseagreen;
+        transform: translateX(100%);
+       
+    }
+
+    button{  
+     padding: 2px;
+   }
+}
+
+
+
+
+
+
+
+
+
+
+/* Mid */
+
+@media (max-width: 900px){
+    body{
+        background-color: lightcoral;
+    }
+    .title{
+        border: solid black;
+        border-width: 7px;
+        margin-right:  50%;
+        padding: 5px;
+        color: yellow;
+        animation: thisIsAKeyFrame 10s ease-in-out infinite;
+    }
+    .parent{
+        background-color: lightslategray;
+        height: 400px;
+        width: 400px;
+    }
+    .child{
+        background-color: lightyellow;
+        height: 50%;
+        width: 50%;
+        transition: 1s;
+    }
+    .parent:hover{
+        background-color: rgb(61, 62, 64);
+        transition: 1s;
+        border: solid rgb(243, 77, 77);
+        border-width: 5px;
+    }
+
+    .parent:hover .child{
+        background-color: lightseagreen;
+        transform: translateX(100%);
+    }
+    button{  
+        padding: 2px;
+      }
+}
+
+
+
+
+
+
+/* Mobile */
+
+@media (max-width: 650px){
+    body{
+        background-color: lightblue;
+    }
+    .title{
+        border: solid black;
+        border-width: 7px;
+        margin-right:  50%;
+        padding: 5px;
+        color: rgb(255, 255, 255);
+        animation: thisIsAKeyFrame 10s ease-in-out infinite;
+    }
+    .parent{
+        background-color: lightslategray;
+        height: 400px;
+        width: 400px;
+    }
+    .child{
+        background-color: lightyellow;
+        height: 50%;
+        width: 50%;
+        transition: 1s;
+    }
+    .parent:hover{
+        background-color: rgb(61, 62, 64);
+        transition: 1s;
+        border: solid rgb(243, 77, 77);
+        border-width: 5px;
+    }
+    .parent:hover .child{
+        background-color: lightseagreen;
+        transform: translateX(100%);
+    }
+    button{  
+        padding: 2px;
+      }
+}
+
+
+
+
+
+
+
+
+
+/* ------- General -------- */

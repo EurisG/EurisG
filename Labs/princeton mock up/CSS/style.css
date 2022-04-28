@@ -1,0 +1,64 @@
+.navContainer{
+    border: solid rgb(69, 69, 227);
+    background-color: lemonchiffon;
+    height: 200px;
+    font-size: 15px;
+    
+}
+
+
+
+.covidContainer{
+    border: solid green;
+    height: 200px;
+}
+
+.navBtnContainer{
+    /* border: solid purple; */
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.topNav{
+    /* border: solid green; */
+    height: 100px;
+    display: flex;
+    
+}
+
+.iconContainer{
+  /* border: solid black; */
+  display: flex;
+  width: 40%;
+  justify-content: space-around;
+  padding-top: 35px;
+} 
+
+.colorLinkContainer{
+    /* border: solid black; */
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+    padding-top: 25px;
+}
+
+.colorLink{
+    border: solid peru;
+    padding: 4px;
+    border-width: 2px;
+    height: 20px;
+}
+
+.colorLink:hover{
+    padding: 2px;
+    border-width: 2px;
+    height: 20px;
+    background-color: black;
+    color: white;
+}
+
+.logo{
+    height: 70px;
+    margin: 2em;
+}
