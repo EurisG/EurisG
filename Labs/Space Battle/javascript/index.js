@@ -1,5 +1,50 @@
-const ussAssembly = document.querySelector('.us')
-const alien = document.querySelector('.them')
+const ussAssembly = document.querySelector('.ship')
+const alien = document.querySelector('.ufo')
+const score = document.querySelector('.legend')
+
+
+const legend = () => {
+        let playerScore = 100
+        let alienScore = 100
+    
+        // console.log('battle started')
+
+}
+
+const playerAttack = () => {
+    let ussAssembly = document.querySelector('.ship')
+    ussAssembly.classList.toggle('.startAlienAttack')
+    
+    let command = prompt('Press [A]ttack? or [R]etreat?')
+            if(command === 'A'){
+                let target = document.querySelector('alien')
+                console.log('PLAYER HAS ATTACKED!')
+            }  else if (command === 'R') {
+                console.log('PLAYER HAS RETREATED!')
+            } 
+            else {
+                console.log('Please select a move!')
+            }
+
+}
+
+const alienAttack = ()=> {
+    let alien = document.querySelector('.alien')
+    alien.classList.toggle('.startPlayerAttack')
+
+    let command = prompt('Press [A]ttack? or [R]etreat?')
+            if(command === 'A'){
+                let target = document.querySelector('ussAssembly')
+                console.log('ALIEN HAS ATTACKED!')
+    
+            } else if (command === 'R') {
+                console.log('ALIEN HAS RETREATED!')
+            } 
+            else {
+                console.log('Please select a move!')
+            }
+
+}
 
 // hull = hp 
 // let ussAssembly = {
@@ -9,11 +54,7 @@ const alien = document.querySelector('.them')
 // }
 
 
-// const legend = () => {
-//     let playerScore = 100
-//     let alienScore = 100
-
-//     console.log('battle started')
+// 
 
 //     let command = prompt('Press [A]ttack? or [R]etreat?')
 //         if(command === 'A'){
