@@ -4,7 +4,7 @@
         transform: translateX(0vw)
     }
     50% {
-        transform: translateX(6vw)
+        transform: translateX(60vw)
     }
     to {
         transform: translateX(0vw)
@@ -167,9 +167,9 @@ p{
 }
 
 .startAlienAttack {
-    animation: alienAttack 1s ease-in ;
+    animation: alien-attack 1s ease-in ;
 }
 
 .startPlayerAttack {
-    animation: playerAttack 1s ease-in ;
+    animation: player-attack 1s ease-in ;
 }

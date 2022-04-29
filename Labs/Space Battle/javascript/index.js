@@ -19,7 +19,7 @@ const legend = () => {
 
 const playerAttack = () => {
     let ussAssembly = document.querySelector('.ship')
-    ussAssembly.classList.toggle('.startAlienAttack')
+    ussAssembly.classList.toggle('startAlienAttack')
     
     let command = prompt('Press [A]ttack? or [R]etreat?')
             if(command === 'A'){
@@ -42,7 +42,7 @@ const playerAttack = () => {
 
 const alienAttack = ()=> {
     let alien = document.querySelector('.alien')
-    alien.classList.toggle('.startPlayerAttack')
+    alien.classList.toggle('startPlayerAttack')
 
     let command = prompt('Press [A]ttack? or [R]etreat?')
             if(command === 'A'){
