@@ -9,37 +9,45 @@ const alien = document.querySelector('.them')
 // }
 
 
-const legend = () => {
-    let playerScore = 100
-    let alienScore = 100
+// const legend = () => {
+//     let playerScore = 100
+//     let alienScore = 100
 
-    console.log('battle started')
+//     console.log('battle started')
 
-    let command = prompt('Ready to [A]ttack? or [R]etreat?')
-        if(command === 'A'){
-            let target = document.querySelector('ufo')
+//     let command = prompt('Press [A]ttack? or [R]etreat?')
+//         if(command === 'A'){
+//             let target = document.querySelector('alien')
 
-            let explosion = document.createElement('img')
-            explosion.setAttribute('src' , 'https://i.gifer.com/origin/d7/d7ac4f38b77abe73165d85edf2cbdb9e_w200.gif')
+//             let explosion = document.createElement('img')
+//             explosion.setAttribute('src' , 'https://i.gifer.com/origin/d7/d7ac4f38b77abe73165d85edf2cbdb9e_w200.gif')
 
-            let currentScore = document.querySelector('.hundred').innerHTML="";
-            // currentScore.style.backgroundColor = "black";
+//             let currentScore = document.querySelector('.hundred').innerHTML="";
+//             // halfLife.style.backgroundColor = "black";
 
-            let halfLife = document.querySelector('.fifty').innerHTML="50%";
+//             let halfLife = document.querySelector('.fifty').innerHTML="50%";
+//             // document.halfLife.style.backgroundColor = black;
 
-            target.replaceWith(explosion)
-        } else {
-            console.log('PLayer has retreated! YOU LOSE!')
-        }
-}
+//             let noHealth = document.querySelector('.noHealth').innerHTML="0%";
+//             target.replaceWith(explosion)
+//         } else {
+//             console.log('PLayer has retreated! YOU LOSE!')
+//         }
+// }
 
-const playerAttack = () => {
+// const playerAttack = () => {
     
-    let us = document.querySelector('.ship')
+//     let us = document.querySelector('.ship')
 
-    ship.classList.toggle('.startAlienAttack')
-}
+//     ship.classList.toggle('.startAlienAttack')
+// }
 
+// const alienAttack = () => {
+    
+//     let us = document.querySelector('.alien')
+
+//     ship.classList.toggle('.startplayerAttack')
+// }
 
 // our SHIP
 // let ussAssembly = {

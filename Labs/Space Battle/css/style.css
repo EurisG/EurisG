@@ -17,7 +17,7 @@
         transform: translateX(0%);
     }
     50% {
-        transform: translateX(60%)
+        transform: translateX(-60%)
     }
    to {
         transform: translateX(0%)
@@ -66,7 +66,7 @@ p{
 /* spaceships container */
 
 .us {
-    border: solid lime;
+    /* border: solid lime; */
     margin: 1em;
     width: 160px;
     
@@ -151,6 +151,11 @@ p{
     color: white;
 }
 
+.noHealth{
+    background-color: rgb(0, 0, 0);
+    width: 10%;
+}
+
 .fifty{
     background-color: lightgreen;
     width: 50%;
@@ -161,6 +166,10 @@ p{
     width: 50%;
 }
 
-/* .startAlienAttack {
-    animation: alienAttack 1s ease-in infinite;
-} */
+.startAlienAttack {
+    animation: alienAttack 1s ease-in ;
+}
+
+.startPlayerAttack {
+    animation: playerAttack 1s ease-in ;
+}

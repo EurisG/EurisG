@@ -43,7 +43,7 @@ const toggleCardThree =  () => {
 
     let riddleThree = prompt('  which island is known for the Big Apple? ')
 
-    if(riddleThree === 'manhattan') {
+    if(riddleThree === 'manhattan' || 'Manhattan') {
         alert(answer.innerHTML = ' CORRECT ! ')
         scoreBoard += 1
         document.querySelector('.points').innerHTML = scoreBoard
