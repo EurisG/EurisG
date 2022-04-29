@@ -1,26 +1,26 @@
 @keyframes alien-attack{
     from
      {
-        transform: translateX(0%)
+        transform: translateX(0vw)
     }
     50% {
-        transform: translateX(60%)
+        transform: translateX(6vw)
     }
     to {
-        transform: translateX(0%)
+        transform: translateX(0vw)
     }
     
 }
 
 @keyframes player-attack{
     from{
-        transform: translateX(0%);
+        transform: translateX(0vw);
     }
     50% {
-        transform: translateX(-60%)
+        transform: translateX(-60vw)
     }
    to {
-        transform: translateX(0%)
+        transform: translateX(0vw)
     }
 }
 
@@ -106,7 +106,7 @@ p{
     cursor: pointer;
 }
 
-.playerScore , .alienScore {
+.playerScore , .alienScore , .playeNum , .alienNum{
     /* border: solid yellow; */
     border-radius: 22px;
     margin: 1em;

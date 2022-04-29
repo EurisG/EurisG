@@ -1,15 +1,21 @@
 const ussAssembly = document.querySelector('.ship')
 const alien = document.querySelector('.ufo')
 const score = document.querySelector('.legend')
+let playerScore = 0
+let alienScore = 0
 
 
 const legend = () => {
-        let playerScore = 100
-        let alienScore = 100
-    
-        // console.log('battle started')
+      
+        // if (var i = 0 ; i < score.length ; i ++ ) {
+        //     let playerAttack = playerScore[i]
+        //     let alienAttack = alienScore[i]
+        // }
 
 }
+
+
+// FUNCTION FOR PLAYER ATTACK 
 
 const playerAttack = () => {
     let ussAssembly = document.querySelector('.ship')
@@ -18,15 +24,21 @@ const playerAttack = () => {
     let command = prompt('Press [A]ttack? or [R]etreat?')
             if(command === 'A'){
                 let target = document.querySelector('alien')
+                playerScore += 100
+                document.querySelector('.playerNum').innerHTML = playerScore
                 console.log('PLAYER HAS ATTACKED!')
             }  else if (command === 'R') {
+                playerScore -= 0
+                document.querySelector('.playerNum').innerHTML = playerScore
                 console.log('PLAYER HAS RETREATED!')
             } 
             else {
-                console.log('Please select a move!')
+                alert('Please select a move!')
             }
 
 }
+
+// FUNCTION FOR ALIEN ATTACK 
 
 const alienAttack = ()=> {
     let alien = document.querySelector('.alien')
@@ -35,13 +47,17 @@ const alienAttack = ()=> {
     let command = prompt('Press [A]ttack? or [R]etreat?')
             if(command === 'A'){
                 let target = document.querySelector('ussAssembly')
+                alienScore += 100
+                document.querySelector('.alienNum').innerHTML = alienScore
                 console.log('ALIEN HAS ATTACKED!')
     
             } else if (command === 'R') {
+                alienScore -= 0
+                document.querySelector('.alienNum').innerHTML = alienScore
                 console.log('ALIEN HAS RETREATED!')
             } 
             else {
-                console.log('Please select a move!')
+                alert('Please select a move!')
             }
 
 }
@@ -90,19 +106,3 @@ const alienAttack = ()=> {
 //     ship.classList.toggle('.startplayerAttack')
 // }
 
-// our SHIP
-// let ussAssembly = {
-//     dodge: function(){
-
-//     }
-// }
-
-
-// const battle = () => {
-
-
-    
-// }
-
-
-// let alienMob = []
