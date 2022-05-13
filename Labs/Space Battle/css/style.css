@@ -167,9 +167,9 @@ p{
 }
 
 .startAlienAttack {
-    animation: alien-attack 1s ease-in ;
+    animation: alien-attack 3s ease-in ;
 }
 
 .startPlayerAttack {
-    animation: player-attack 1s ease-in ;
+    animation: player-attack 3s ease-in ;
 }

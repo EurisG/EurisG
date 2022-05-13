@@ -4,15 +4,28 @@ const score = document.querySelector('.legend')
 let playerScore = 0
 let alienScore = 0
 
+function legend() {
+    let ussAssembly = {
+        hp : 20,
+        firepower : 0,
+        accuracy : .7
+    }
 
-const legend = () => {
-      
-        // if (var i = 0 ; i < score.length ; i ++ ) {
-        //     let playerAttack = playerScore[i]
-        //     let alienAttack = alienScore[i]
-        // }
-
+    let alien = {
+        hp : 10,
+        firepower : 1,
+        accuracy : .5
+    }
 }
+
+// const legend = () => {
+      
+//         // if (var i = 0 ; i < score.length ; i ++ ) {
+//         //     let playerAttack = playerScore[i]
+//         //     let alienAttack = alienScore[i]
+//         // }
+
+// }
 
 
 // FUNCTION FOR PLAYER ATTACK 
@@ -22,12 +35,12 @@ const playerAttack = () => {
     ussAssembly.classList.toggle('startAlienAttack')
     
     let command = prompt('Press [A]ttack? or [R]etreat?')
-            if(command === 'A'){
+            if(command === 'A' ){
                 let target = document.querySelector('alien')
                 playerScore += 100
                 document.querySelector('.playerNum').innerHTML = playerScore
                 console.log('PLAYER HAS ATTACKED!')
-            }  else if (command === 'R') {
+            }  else if (command === 'R' ) {
                 playerScore -= 0
                 document.querySelector('.playerNum').innerHTML = playerScore
                 console.log('PLAYER HAS RETREATED!')
@@ -36,6 +49,7 @@ const playerAttack = () => {
                 alert('Please select a move!')
             }
 
+            legend()
 }
 
 // FUNCTION FOR ALIEN ATTACK 
@@ -43,9 +57,11 @@ const playerAttack = () => {
 const alienAttack = ()=> {
     let alien = document.querySelector('.alien')
     alien.classList.toggle('startPlayerAttack')
+    
+  
 
     let command = prompt('Press [A]ttack? or [R]etreat?')
-            if(command === 'A'){
+            if(command === 'A' ){
                 let target = document.querySelector('ussAssembly')
                 alienScore += 100
                 document.querySelector('.alienNum').innerHTML = alienScore
@@ -59,7 +75,7 @@ const alienAttack = ()=> {
             else {
                 alert('Please select a move!')
             }
-
+            legend()
 }
 
 // hull = hp 
