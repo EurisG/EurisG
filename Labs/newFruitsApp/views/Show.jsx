@@ -1,6 +1,6 @@
-const react = require('react')
+const React = require('react')
 
-class show extends React.Component {
+class Show extends React.Component {
     render () {
         return (
             <h1> Show Page </h1>
@@ -8,6 +8,6 @@ class show extends React.Component {
     }
 }
 
-module.exports = show;
+module.exports = Show;
 
 // inside react components :render and :return

@@ -16,7 +16,7 @@ app.get('/fruits', (req, res,) => {
 
 // add show route 
 app.get('/fruits/:indexOfFruitsArray', (req, res) => {
-    res.render('Show');
+    res.render('Show', {fruit: fruitData[req.params.indexOfFruitsArray]});
 });
 
 
