@@ -9,6 +9,10 @@ class Index extends React.Component{
             // Ternary "Logic" ? "ifTrue" : "If False"
             <>
              <h1> Fruits Index Page </h1>
+
+             <nav>
+                 <a href="/fruits/new">Create A New</a>
+             </nav>
                  <ul>
                     { fruits.map(( fruit, i ) => {
                         return (
