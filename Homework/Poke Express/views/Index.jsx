@@ -11,8 +11,8 @@ class Index extends React.Component {
                     {pokemon.map((pokemon, i) => {
                         return(
                             <li>
-                                This pokemon is {pokemon.name}<br></br>
-                                <a href="">{pokemon.img} </a>
+                                This pokemon is <a href={`/models/pokemon.js/${i}`}>{pokemon.name}</a><br></br>
+                                {pokemon.img} 
                             </li>
                         )
 
