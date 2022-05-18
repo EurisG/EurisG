@@ -12,7 +12,7 @@ class Index extends React.Component {
                     {pokemon.map((pokemon, i) => {
                         return(
                             <li>
-                             <a href={`/pokemon/${i}`}>{pokemon.name}</a>{' '} I Choose You!
+                             <a href={`/pokemon/${i}`}>{capitalize(pokemon.name)}</a>{' '} I Choose You!
                     
                             </li>
                         )
@@ -25,5 +25,8 @@ class Index extends React.Component {
     }
 }
 
+function capitalize(str){
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
 
 module.exports = Index;
