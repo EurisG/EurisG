@@ -1,5 +1,6 @@
 const React = require('react'); 
 const pokemon = require('../models/pokemon');
+
 class Index extends React.Component {
 
     render() {
@@ -11,7 +12,7 @@ class Index extends React.Component {
                     {pokemon.map((pokemon, i) => {
                         return(
                             <li>
-                             <a href={`/models/pokemon.js/${i}`}>{pokemon.name}</a>{' '} I Choose You!
+                             <a href={`/pokemon/${i}`}>{pokemon.name}</a>{' '} I Choose You!
                     
                             </li>
                         )

@@ -29,8 +29,8 @@ app.get('/pokemon', (req, res) => {
 //     // res.render("Show", {pokemon: pokeData[req.params.indexOfFruitsArray]});
 // });
 
-app.get('/pokemon/:indexOfFruitsArray', (req, res) => {
-    res.render("Show", {pokemon: pokeData[req.params.indexOfFruitsArray]});
+app.get('/pokemon/:character', (req, res) => {
+    res.render("Show", {pokemon: pokeData[req.params.character]});
 });
 
 app.listen(3000, () => {
