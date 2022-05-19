@@ -11,9 +11,15 @@ const learnerSchema = new mongoose.Schema({
         type: String,
     },
     age: {
-        type: String,
+        type: Number,
     },
     courses: {
         type: [String],
     },
-})
+});
+
+const Learner = mongoose.model("Learner", learnerSchema);
+
+
+// EXPORT OUR LEARNER MODEL TO OTHER APPLICATIONS 
+module.exports = Learner;

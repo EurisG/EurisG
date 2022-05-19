@@ -3,7 +3,7 @@ const app = express();
 
 const learnerRouter =  require('./route/learnerRoute');
 
-
+app.use(express.json());
 
 
 
