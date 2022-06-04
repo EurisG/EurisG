@@ -1,7 +1,10 @@
 // styling 
 const body = {
+//  padding: "100px",
  margin: "200px",
  backgroundColor: "#b4b4b4",
+ height: "1100px",
+ fontFamily: "'Nunito', sans-serif"
 }
 
 const bodyOne = {
@@ -29,6 +32,10 @@ const boxOneText = {
     top: "20%",
     position: "relative"
 }
+const textTwo = {
+    textAlign: "center"
+}
+
 
 const boxTwo = {
     // border : "solid 2px black",
@@ -111,9 +118,9 @@ class TopBox extends React.Component {
 
             <div style={boxTwo}>
                 <h5>Sentiment Analyst</h5>
-                <h3>960</h3>
-                <h3>122</h3>
-                <h3>321</h3>
+                <h3 style={textTwo}>960</h3>
+                <h3 style={textTwo}>122</h3>
+                <h3 style={textTwo}>321</h3>
             </div>
 
              </div>
@@ -141,6 +148,7 @@ class App extends React.Component {
         return(
             <div style={body}>
                  <TopBox />
+                 
                 <LeftBox /> 
                 <BottomBox />
                 
