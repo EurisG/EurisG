@@ -2,7 +2,7 @@
 const body = {
 //  padding: "100px",
  margin: "200px",
- backgroundColor: "#b4b4b4",
+ backgroundColor: "#edebeb",
  height: "1100px",
  fontFamily: "'Nunito', sans-serif"
 }
