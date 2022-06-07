@@ -5,19 +5,38 @@ class App extends React.Component {
     // initialize your state 
     state = {
         data: data,
+        value: "",
+        price:  0,
+        description: "Describe this item",
     };
+
+    // create a method to change user input 
+    handleChange = (e) => {
+        this.setState({
+            [e.target.id]: e.target.value,
+        })
+    }
+
     render() {
         const datalist = data.map((element) => {
             return(
                 <ul>
-                    <li>{element.name}</li>
+                    <li>{element.name}{' '}
+                        ${element.price}
+                    </li>
                 </ul>
             )
         })
         return(
             <div>
                 <h1>Big Time Shopping</h1>
-                {this.state.data[3].name}
+                <form>
+                    <labe htmlFor="name">Name:</labe>
+                <input type='text' value={this.state.value} 
+                onChange={this.handleChange} id='name'/>
+                </form>
+                {datalist}
+                {/* {this.state.data[3].name} */}
             </div>
         );
     }
