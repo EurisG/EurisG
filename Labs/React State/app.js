@@ -2,6 +2,10 @@ console.table(data);
 
 // create class component to render to screen
 class App extends React.Component {
+    // initialize your state 
+    state = {
+        data: data,
+    };
     render() {
         const datalist = data.map((element) => {
             return(
@@ -12,8 +16,8 @@ class App extends React.Component {
         })
         return(
             <div>
-                <h1>App Component</h1>
-                {datalist}
+                <h1>Big Time Shopping</h1>
+                {this.state.data[3].name}
             </div>
         );
     }
