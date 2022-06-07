@@ -1,5 +1,9 @@
 console.table(data);
 
+const body = {
+    background: "rgb(251,126,63)",
+    background: "radial-gradient(circle, rgba(251,126,63,0.7988110422740524) 0%, rgba(237,235,235,0.7917760854341737) 100%)",
+}
 // create class component to render to screen
 class App extends React.Component {
     // initialize your state 
@@ -9,6 +13,7 @@ class App extends React.Component {
         name: "",
         price:  0,
         description: "Describe this item",
+        isHiring: true
     };
 
     // create a method to change user input 
@@ -36,6 +41,13 @@ class App extends React.Component {
         console.log(this.state.data)
     };
 
+    // create a function to toggle the value of our hiring state 
+    handleToggleHiring = () => {
+        this.setState({
+            isHiring: !this.state.isHiring,
+        })
+    }
+
     render() {
         const datalist = this.state.data.map((element) => {
             return(
@@ -48,7 +60,10 @@ class App extends React.Component {
         })
         return(
             <div>
+                <body style={body}>
                 <h1>Big Time Shopping</h1>
+                    <h2>{this.state.isHiring ? (<h2>Yes we are hiring!</h2>) : (<h2>Sorry, we arent hiring</h2>)}</h2>
+                    <button onClick={this.handleToggleHiring}>Toggle Hiring</button>
                      <form onSubmit={this.handleFormSubmit}>
                         <label htmlFor="name">Name:</label>{' '}
                          <input id='name' type='text' 
@@ -78,7 +93,7 @@ class App extends React.Component {
                         </div>
                 {datalist}
                 {/* {this.state.data[3].name} */}
-
+                </body>
             </div>
         );
     }
