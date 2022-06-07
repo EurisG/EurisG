@@ -6,6 +6,7 @@ class App extends React.Component {
     state = {
         data: data,
         value: "",
+        name: "",
         price:  0,
         description: "Describe this item",
     };
@@ -14,11 +15,29 @@ class App extends React.Component {
     handleChange = (e) => {
         this.setState({
             [e.target.id]: e.target.value,
-        })
-    }
+        });
+    };
+
+    // create method to submit the form 
+    handleFormSubmit = (e) => {
+        e.preventDefault();
+
+        // lets add a new item 
+        const newItem = {
+            name: this.state.name,
+            price: this.state.price,
+            description: this.state.description,
+        };
+
+        // add the new item to array 
+        this.setState({
+            data: [newItem, ...this.state.data]
+        });
+        console.log(this.state.data)
+    };
 
     render() {
-        const datalist = data.map((element) => {
+        const datalist = this.state.data.map((element) => {
             return(
                 <ul>
                     <li>{element.name}{' '}
@@ -30,13 +49,36 @@ class App extends React.Component {
         return(
             <div>
                 <h1>Big Time Shopping</h1>
-                <form>
-                    <labe htmlFor="name">Name:</labe>
-                <input type='text' value={this.state.value} 
-                onChange={this.handleChange} id='name'/>
-                </form>
+                     <form onSubmit={this.handleFormSubmit}>
+                        <label htmlFor="name">Name:</label>{' '}
+                         <input id='name' type='text' 
+                         value={this.state.name}
+                            onChange={this.handleChange}  />
+                   <br />
+                    <br />
+                        <label htmlFor="price">Price:</label>{' '}
+                        <input id='price' type='text' 
+                        value={this.state.price}
+                            onChange={this.handleChange}  />
+                       <br />
+                        <br />
+                        <label htmlFor="description">Description:</label>{' '}
+                        <input id='description' type='text' 
+                        value={this.state.description}
+                            onChange={this.handleChange} />
+                            <br />
+                            <br />
+                            <input type='submit'></input>
+                        </form>
+                        <div>
+                            <h2>Preview our new item</h2>
+                            <h3>{this.state.name}</h3>
+                            <h4>{this.state.price}</h4>
+                             <h5>{this.state.description}</h5>
+                        </div>
                 {datalist}
                 {/* {this.state.data[3].name} */}
+
             </div>
         );
     }
