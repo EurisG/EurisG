@@ -20,7 +20,7 @@ class ProductList extends React.Component {
     render() {
       console.log(this.state);
       return (
-        <li onClick={this.handleCartToggle}>
+        <li onClick={this.props.handleShoppingCart}>
           {this.props.element.name}{" "}
           {this.state.inShoppingCart ? <span>in Shopping Cart</span> : null}
         </li>
@@ -69,16 +69,22 @@ class ProductList extends React.Component {
         isHiring: !this.state.isHiring,
       });
     };
+
+    // create a method in app Component that keeps a handle inside product list component
+    handleShoppingCart = () => {
+        console.log('Logging from app component');
+    };
   
     render() {
       // console.table(this.state.data);
       const dataList = this.state.data.map((element) => {
         return (
-          <ul>
+          <ul className="products">
             {/* <li>
               {element.name} {element.price}
             </li> */}
-            <ProductList element={element} />
+            
+            <ProductList element={element} handleShoppingCart={this.handleShoppingCart} />
           </ul>
         );
       });
@@ -123,13 +129,17 @@ class ProductList extends React.Component {
             <br />
             <input type="submit" />
           </form>
-          <div>
+          <div className="preview">
             <h2>Preview our new item</h2>
             <h3>{this.state.name}</h3>
             <h4>{this.state.price}</h4>
             <h5>{this.state.description}</h5>
           </div>
           {dataList}
+          <div className='cart'>
+            <h3> Shopping Cart </h3>
+                <ul></ul>
+                </div>
           {/* Passing props from App component to ProductList component */}
           {/* <ProductList data={data} handleCartToggle={this.handleCartToggle} /> */}
         </div>
