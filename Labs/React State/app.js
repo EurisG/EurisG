@@ -6,9 +6,25 @@ console.table(data);
 // }
 
 // create class component 
+
+class Total extends React.Component {
+    render(){
+        const total = this.props.cart.reduce((accumulator, element) => {
+            return (accumulator += element.price);
+            
+        }, 0);
+
+        return(
+           <div>
+               <h5>Total: {total}</h5>
+           </div>
+        )
+    }
+}
 // create shopping list comp to receive the data from chart 
 class ShoppingList extends React.Component {
     render() {
+
         const cartItems = this.props.cart.map((element) => {
             return(
                 <li>
@@ -17,9 +33,12 @@ class ShoppingList extends React.Component {
             )
         })
         return(
+            <div>
             <ul>
                {cartItems}
             </ul>
+            {this.props.children}
+            </div>
         );
     }
 };
@@ -161,7 +180,9 @@ class ProductList extends React.Component {
           <div className='cart'>
             <h3> Shopping Cart </h3>
                 <ul>
-                <ShoppingList cart={this.state.cart}/>
+                <ShoppingList cart={this.state.cart}>
+                <Total cart={this.state.cart}/>
+                </ShoppingList>
                 </ul>
                 </div>
                 
