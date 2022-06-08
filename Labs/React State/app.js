@@ -6,6 +6,23 @@ console.table(data);
 // }
 
 // create class component 
+// create shopping list comp to receive the data from chart 
+class ShoppingList extends React.Component {
+    render() {
+        const cartItems = this.props.cart.map((element) => {
+            return(
+                <li>
+                    {element.name} {element.price}
+                </li>
+            )
+        })
+        return(
+            <ul>
+               {cartItems}
+            </ul>
+        );
+    }
+};
 
 class ProductList extends React.Component {
     state = {
@@ -20,7 +37,9 @@ class ProductList extends React.Component {
     render() {
       console.log(this.state);
       return (
-        <li onClick={this.props.handleShoppingCart}>
+        <li onClick={() => {
+            this.props.handleShoppingCart(this.props.element);
+        }}>
           {this.props.element.name}{" "}
           {this.state.inShoppingCart ? <span>in Shopping Cart</span> : null}
         </li>
@@ -38,6 +57,7 @@ class ProductList extends React.Component {
       price: 0,
       description: "Describe this item",
       isHiring: true,
+      cart: [],
     };
   
     // CREATE A METHOD TO CHANGE USER INPUT
@@ -71,12 +91,14 @@ class ProductList extends React.Component {
     };
 
     // create a method in app Component that keeps a handle inside product list component
-    handleShoppingCart = () => {
-        console.log('Logging from app component');
+    handleShoppingCart = (item) => {
+        this.setState({
+            cart: [item, ...this.state.cart],
+        });
     };
   
     render() {
-      // console.table(this.state.data);
+      console.table(this.state.cart);
       const dataList = this.state.data.map((element) => {
         return (
           <ul className="products">
@@ -138,8 +160,11 @@ class ProductList extends React.Component {
           {dataList}
           <div className='cart'>
             <h3> Shopping Cart </h3>
-                <ul></ul>
+                <ul>
+                <ShoppingList cart={this.state.cart}/>
+                </ul>
                 </div>
+                
           {/* Passing props from App component to ProductList component */}
           {/* <ProductList data={data} handleCartToggle={this.handleCartToggle} /> */}
         </div>
