@@ -1,9 +1,9 @@
 console.table(data);
 
-const body = {
-    background: "rgb(251,126,63)",
-    background: "radial-gradient(circle, rgba(251,126,63,0.7988110422740524) 0%, rgba(237,235,235,0.7917760854341737) 100%)",
-}
+// const body = {
+//     background: "rgb(251,126,63)",
+//     background: "radial-gradient(circle, rgba(251,126,63,0.7988110422740524) 0%, rgba(237,235,235,0.7917760854341737) 100%)",
+// }
 
 // create class component 
 
@@ -83,7 +83,7 @@ class ProductList extends React.Component {
         );
       });
       return (
-        <div style={body}>
+        <div >
           <h1>Big Time Shopping</h1>
           <h2>
             {this.state.isHiring ? (
