@@ -44,6 +44,28 @@ const receipt3 = {
   },
   paid: true
 }
+
+// styling 
+
+const receipts = {
+    display: "flex",
+    justifyContent: "space-around",
+   
+}
+const box = {
+    border: "solid 5px #27ff77",
+    padding: "30px",
+    webkitBoxShadow: "0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(255,255,255,0)",
+    boxShadow: "0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(255,255,255,0)",
+    background: "rgb(105,105,105)",
+    background: "linear-gradient(0deg, rgba(105,105,105,0.923987174267101) 0%, rgba(99,99,99,0.5787103013029316) 100%)"
+}
+
+const title = {
+    textAlign: "center",
+    textDecoration : "underline"
+}
+
 // receipt1 class component 
 class ReceiptOne extends React.Component {
     render(){
@@ -56,7 +78,7 @@ class ReceiptOne extends React.Component {
                 <h5><span>Rice: </span>{this.props.receipt.order.rice}</h5>
                 <h5><span>Sauce: </span>{this.props.receipt.order.sauce}</h5>
                 <h5><span>Drink: </span>{this.props.receipt.order.drink}</h5>
-                <h5><span>Cost: </span>{this.props.receipt.order.cost}</h5>
+                <h5 style={{fontSize: "20px" }}><span>Cost: </span>{this.props.receipt.order.cost}</h5>
                 
             </div>
         )
@@ -73,7 +95,7 @@ class ReceiptTwo extends React.Component {
                 <h5><span>Rice: </span>{this.props.receipt.order.rice}</h5>
                 <h5><span>Sauce: </span>{this.props.receipt.order.sauce}</h5>
                 <h5><span>Drink: </span>{this.props.receipt.order.drink}</h5>
-                <h5><span>Cost: </span>{this.props.receipt.order.cost}</h5>
+                <h5 style={{fontSize: "20px" }}><span>Cost: </span>{this.props.receipt.order.cost}</h5>
                 
             </div>
         )
@@ -90,7 +112,7 @@ class ReceiptThree extends React.Component {
                 <h5><span>Rice: </span>{this.props.receipt.order.rice}</h5>
                 <h5><span>Sauce: </span>{this.props.receipt.order.sauce}</h5>
                 <h5><span>Drink: </span>{this.props.receipt.order.drink}</h5>
-                <h5><span>Cost: </span>{this.props.receipt.order.cost}</h5>
+                <h5 style={{fontSize: "20px" }}><span>Cost: </span>{this.props.receipt.order.cost}</h5>
                 
             </div>
         )
@@ -109,10 +131,22 @@ class App extends React.Component {
     render() {
         
         return(
-            <div>
-                <ReceiptOne receipt={this.state.receipt1} />
-                <ReceiptTwo receipt={this.state.receipt2} />
-                <ReceiptThree receipt={this.state.receipt3} />
+            <div >
+                 <div style={title}>
+                    <h1>Receipts Unpaid:</h1>
+                </div>
+               
+               <div style={receipts}>
+               <div style={box}>
+                    { this.state.receipt1.paid ? '' : <ReceiptOne receipt={this.state.receipt1} />}
+                </div>
+                <div style={box}>
+                    { this.state.receipt2.paid ? '' : <ReceiptTwo receipt={this.state.receipt2} />}
+                </div>
+                <div style={box}>
+                    { this.state.receipt3.paid ? '' : <ReceiptThree receipt={this.state.receipt3} />}
+                </div>
+                </div>
             </div>
         )
     }
