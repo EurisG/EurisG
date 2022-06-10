@@ -34,7 +34,9 @@ class App extends React.Component {
                     return response.json();
                 })
                 .then((data) => {
-                    console.log(data);
+                    this.setState({
+                        searchResult: data,
+                    });
                 })
                 .catch((error) => {
                     console.error(error.message);
@@ -61,7 +63,8 @@ class App extends React.Component {
             value='Find Movie Info'
           />
         </form>
-       <MovieInfo />
+        {this.state.searchResult ? 
+       (<MovieInfo searchResult={this.state.searchResult} />) : ("")}
 
       </>
         );
