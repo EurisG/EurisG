@@ -1,10 +1,11 @@
 // 1. Import React 
 import React from 'react';
 
+
 // 2. Make component 
 class MovieInfo extends React.Component {
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         return(
             <div>
                 <h1>Movie: {this.props.searchResult.Title}</h1>
