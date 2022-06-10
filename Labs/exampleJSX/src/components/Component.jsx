@@ -23,14 +23,14 @@ const Component = () => {
 
     const dogList = dogs.map((dog) => {
         return(
-            <div>
+            <div key={dog.name}>
                 <h1>{dog.name}</h1>
                 <h2>{dog.age}</h2>
             </div>
         )
     })
     return(
-        <div>
+        <div >
             {dogList}
         </div>
     )

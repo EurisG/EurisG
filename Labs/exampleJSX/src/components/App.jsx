@@ -3,6 +3,7 @@ import React from 'react';
 
 import Child from './Child';
 import Component from './Component';
+import FinalComponent from './FinalComponent';
 // RETURN APP COMPONENT 
 const App = () => {
     // create variable 
@@ -12,11 +13,12 @@ const App = () => {
     }
     return(
         <div>
-            <Child
+            {/* <Child
             greeting={'Hello World!'}
             number={281}
             setVariable={setVariable}/>
-            <Component />
+            <Component /> */}
+            <FinalComponent />
             <h1>{10 * 10}</h1>
         </div>
     );
