@@ -42,7 +42,7 @@ const receipt3 = {
     drink: 'Sparkling Blood Orange Soda',
     cost: 20
   },
-  paid: true
+  paid: false
 }
 
 // styling 
@@ -68,8 +68,20 @@ const title = {
 
 // receipt1 class component 
 class ReceiptOne extends React.Component {
+  
+    state ={
+        paid: false,
+    }
+    paidHandling = () => {
+        this.setState({
+           paid: true,
+        })
+        }
+    
+    
     render(){
-        console.log(this.props.receipt.order.paid)
+        console.log(this.state)
+        console.log(this.state.receipt1)
         return(
             <div >
                 <h2>{this.props.receipt.person}</h2>
@@ -79,14 +91,23 @@ class ReceiptOne extends React.Component {
                 <h5><span>Sauce: </span>{this.props.receipt.order.sauce}</h5>
                 <h5><span>Drink: </span>{this.props.receipt.order.drink}</h5>
                 <h5 style={{fontSize: "20px" }}><span>Cost: </span>{this.props.receipt.order.cost}</h5>
-                
+                <button onClick={() => {this.state.paid}} >Paid</button>
             </div>
         )
     }
 };
 class ReceiptTwo extends React.Component {
+    // state ={
+    //     paid: false,
+    // }
+    // paidHandling = () => {
+    //     this.setState({
+    //        paid: true,
+    //     })
+    //     }
     render(){
-        console.log(this.props.receipt.order.paid)
+        console.log(this.state)
+        console.log(this.state.paid)
         return(
             <div >
                 <h2>{this.props.receipt.person}</h2>
@@ -96,14 +117,23 @@ class ReceiptTwo extends React.Component {
                 <h5><span>Sauce: </span>{this.props.receipt.order.sauce}</h5>
                 <h5><span>Drink: </span>{this.props.receipt.order.drink}</h5>
                 <h5 style={{fontSize: "20px" }}><span>Cost: </span>{this.props.receipt.order.cost}</h5>
-                
+                <button onClick={() => {this.state.paid}} >Paid</button>
             </div>
         )
     }
 };
 class ReceiptThree extends React.Component {
+    // state ={
+    //     paid: false,
+    // }
+    // paidHandling = () => {
+    //     this.setState({
+    //        paid: true,
+    //     })
+    //     }
     render(){
-        console.log(this.props.receipt.order.paid)
+        console.log(this.state)
+        console.log(this.state.paid)
         return(
             <div >
                 <h2>{this.props.receipt.person}</h2>
@@ -113,7 +143,7 @@ class ReceiptThree extends React.Component {
                 <h5><span>Sauce: </span>{this.props.receipt.order.sauce}</h5>
                 <h5><span>Drink: </span>{this.props.receipt.order.drink}</h5>
                 <h5 style={{fontSize: "20px" }}><span>Cost: </span>{this.props.receipt.order.cost}</h5>
-                
+                <button onClick={() => {this.state.paid}} >Paid</button>
             </div>
         )
     }
@@ -128,6 +158,9 @@ class App extends React.Component {
         receipt3: receipt3
         }
     };
+  
+   
+   
     render() {
         
         return(
@@ -138,7 +171,7 @@ class App extends React.Component {
                
                <div style={receipts}>
                <div style={box}>
-                    { this.state.receipt1.paid ? '' : <ReceiptOne receipt={this.state.receipt1} />}
+                    { this.state.receipt1.paid ? '' : <ReceiptOne receipt={this.state.receipt1} receipt1={this.state.paidHandling} />}
                 </div>
                 <div style={box}>
                     { this.state.receipt2.paid ? '' : <ReceiptTwo receipt={this.state.receipt2} />}
