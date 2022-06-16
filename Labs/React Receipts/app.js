@@ -74,7 +74,7 @@ class ReceiptOne extends React.Component {
     }
     paidHandling = () => {
         this.setState({
-           paid: !this.state.receipt1.paid,
+           paid: !this.state.paid,
         })
         };
     
@@ -83,7 +83,7 @@ class ReceiptOne extends React.Component {
         console.log(this.state)
         console.log(this.state.receipt1)
         return(
-            <div >
+            <div style={this.state.paid ? {display: 'none'}: {display: 'block'}}>
                 <h2>{this.props.receipt.person}</h2>
                 <h5><span>Main: </span>{this.props.receipt.order.main}</h5>
                 <h5><span>Protein: </span>{this.props.receipt.order.protein}</h5>
@@ -91,7 +91,7 @@ class ReceiptOne extends React.Component {
                 <h5><span>Sauce: </span>{this.props.receipt.order.sauce}</h5>
                 <h5><span>Drink: </span>{this.props.receipt.order.drink}</h5>
                 <h5 style={{fontSize: "20px" }}><span>Cost: </span>{this.props.receipt.order.cost}</h5>
-                <button onClick={() => {this.state.receipt1.paid}} >Paid</button>
+                <button onClick={this.paidHandling} >Paid</button>
             </div>
         )
     }
@@ -102,14 +102,14 @@ class ReceiptTwo extends React.Component {
     }
     paidHandling = () => {
         this.setState({
-           paid:!this.state.receipt2.paid,
+           paid:!this.state.paid,
         })
         };
     render(){
         console.log(this.state)
         // console.log(this.state.paid)
         return(
-            <div >
+            <div style={this.state.paid ? {display: 'none'}: {display: 'block'}} >
                 <h2>{this.props.receipt.person}</h2>
                 <h5><span>Main: </span>{this.props.receipt.order.main}</h5>
                 <h5><span>Protein: </span>{this.props.receipt.order.protein}</h5>
@@ -117,7 +117,7 @@ class ReceiptTwo extends React.Component {
                 <h5><span>Sauce: </span>{this.props.receipt.order.sauce}</h5>
                 <h5><span>Drink: </span>{this.props.receipt.order.drink}</h5>
                 <h5 style={{fontSize: "20px" }}><span>Cost: </span>{this.props.receipt.order.cost}</h5>
-                <button onClick={() => {this.state.receipt2.paid}} >Paid</button>
+                <button onClick={this.paidHandling} >Paid</button>
             </div>
         )
     }
@@ -128,14 +128,14 @@ class ReceiptThree extends React.Component {
     }
     paidHandling = () => {
         this.setState({
-           paid: !this.state.receipt3.paid,
+           paid: !this.state.paid,
         })
         };
     render(){
         console.log(this.state)
         // console.log(this.state.paid)
         return(
-            <div >
+            <div style={this.state.paid ? {display: 'none'}: {display: 'block'}}>
                 <h2>{this.props.receipt.person}</h2>
                 <h5><span>Main: </span>{this.props.receipt.order.main}</h5>
                 <h5><span>Protein: </span>{this.props.receipt.order.protein}</h5>
@@ -143,7 +143,7 @@ class ReceiptThree extends React.Component {
                 <h5><span>Sauce: </span>{this.props.receipt.order.sauce}</h5>
                 <h5><span>Drink: </span>{this.props.receipt.order.drink}</h5>
                 <h5 style={{fontSize: "20px" }}><span>Cost: </span>{this.props.receipt.order.cost}</h5>
-                <button onClick={() => {this.state.receipt3.paid}} >Paid</button>
+                <button onClick={this.paidHandling} >Paid</button>
             </div>
         )
     }
