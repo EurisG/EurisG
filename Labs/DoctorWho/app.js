@@ -2,7 +2,7 @@ class DivOne extends React.Component {
     render() {
         return(
         <div>
-            <h3></h3>
+            <DivTwo />
         </div>
             
         )
@@ -12,17 +12,44 @@ class DivTwo extends React.Component {
     render() {
         return(
         <div>
-            <h3></h3>
+           <DivThree />
+           <DivThree />
         </div>
             
         )
     }
 };
 class DivThree extends React.Component {
+    state = {
+        tardis: {
+            name: 'Time and Relative Dimension in Space',
+            caps: false,
+                }
+                
+    };
+    changeIt = (tardis) => {
+        if (this.state.tardis.caps) {
+          this.setState({
+            tardis: {
+              name: this.state.tardis.name.toLowerCase(),
+              caps: false
+            }
+          })
+        } else {
+          this.setState({
+            tardis: {
+              name: this.state.tardis.name.toUpperCase(),
+              caps: true
+            }
+          })
+        }
+      }
     render() {
         return(
-        <div>
-            <h3></h3>
+        <div onClick={() => this.changeIt(this.state.tardis.name)}>
+             <h3>
+                {this.state.tardis.name}
+                </h3>
         </div>
             
         )
@@ -34,43 +61,43 @@ class DivThree extends React.Component {
 
 
 class App extends React.Component {
-    state = {
-        tardis: {
-            name: 'Time and Relative Dimension in Space',
-            caps: false,
-                }
+    // state = {
+    //     tardis: {
+    //         name: 'Time and Relative Dimension in Space',
+    //         caps: false,
+    //             }
                 
-    };
-    changeIt = (text) => {
-        if (this.state.tardis.caps) {
-          this.setState({
-            tardis: {
-              name: text.toLowerCase(),
-              caps: false
-            }
-          })
-        } else {
-          this.setState({
-            tardis: {
-              name: text.toUpperCase(),
-              caps: true
-            }
-          })
-        }
-      }
+    // };
+    // changeIt = (tardis) => {
+    //     if (this.state.tardis.caps) {
+    //       this.setState({
+    //         tardis: {
+    //           name: this.state.tardis.name.toLowerCase(),
+    //           caps: false
+    //         }
+    //       })
+    //     } else {
+    //       this.setState({
+    //         tardis: {
+    //           name: this.state.tardis.name.toUpperCase(),
+    //           caps: true
+    //         }
+    //       })
+    //     }
+    //   }
     
     render() {
         console.log(this.state)
         return(
             <div>
-                <h3 onClick={this.changeIt}>
+                {/* <h3 onClick={this.state.changeIt}>
                     hello
                 {this.changeIt.name}
-                </h3>
+                </h3> */}
 
                 <DivOne />
-                <DivTwo />
-                <DivThree />
+                {/* <DivTwo />
+                <DivThree /> */}
             </div>
         )
     }
