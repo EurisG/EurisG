@@ -3,10 +3,10 @@ import React, {useState} from 'react';
 import SenderChild from './SenderChild';
 import ReceiverChild from './ReceiverChild';
 const Parent = () => {
-    const [state, setState] = useState('Hello');
+    const [state, setState] = useState('Hello!');
 
     const updateState = (data) => {
-        console.log('im a function');
+       setState(data)
     }
     return(
         <div>

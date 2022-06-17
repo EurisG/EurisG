@@ -5,7 +5,7 @@ const ReceiverChild = (props) => {
     // console.log(props);
     return(
         <div>
-            <h1>ReceiverChild</h1>
+            <h1>{props.state}</h1>
         </div>
     )
 };
