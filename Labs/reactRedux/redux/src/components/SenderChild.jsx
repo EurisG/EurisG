@@ -7,7 +7,10 @@ const SenderChild = (props) => {
         <div>
             <button onClick={() => {
                 return props.updateState('Goodbye!');
-            }}>Click Me</button>
+            }}>Goodbye</button>
+              <button onClick={() => {
+                return props.updateState('Hello!');
+            }}>Hello</button>
             
         </div>
     )
