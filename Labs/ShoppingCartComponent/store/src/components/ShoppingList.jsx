@@ -5,10 +5,11 @@ const ShoppingList = () => {
     return(
         <div>
             <div>
-            <li>{Data.map((element) => {
-               return element.name + "" + element.price
-            })}</li>
-            
+                <ul>
+            {Data.map((element) => {
+               return <ul>{element.name}  {" "} {element.price}</ul>
+            })}
+            </ul>
            </div>
            
 
