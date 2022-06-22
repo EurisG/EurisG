@@ -1,13 +1,14 @@
 import React from "react";
+import { Link } from 'react-router-dom';
 
 const Navigation = () => {
   return (
     <div className="ui secondary pointing menu">
-      <a className="active item" href="/">Home</a>
-      <a className="item" href="/about">About</a>
-      <a className="item" href="/projects">Projects</a>
+      <Link className="active item" to="/">Home</Link>
+      <Link className="item" to="/about">About</Link>
+      <Link className="item" to="/projects">Projects</Link>
       <div className="right menu">
-        <a className="ui item">Logout</a>
+        <Link className="ui item" to="/logout">Logout</Link>
       </div>
     </div>
   );

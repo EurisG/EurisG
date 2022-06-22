@@ -22,12 +22,12 @@ const App = () => {
                     return <Home {...routerProps} homeData='This is data from home component'/>
                 }}/>
 
-                  <Route path='/about' render={() => {
-                    return <About />
+                  <Route path='/about' render={(routerProps) => {
+                    return <About {...routerProps} aboutData='This is data from about component'/>
                 }}/>
 
-                <Route path='/projects' render={() => {
-                    return <Projects />
+                <Route path='/projects' render={(routerProps) => {
+                    return <Projects {...routerProps} projectsData='This is data from projects component'/>
                 }}/>
                 </Switch>
         </div>
