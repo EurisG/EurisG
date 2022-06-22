@@ -5,11 +5,12 @@ import Navigation from './Navigation';
 import Home from './Home';
 import About from './About';
 import Projects from './Projects';
+import Detail from './Detail';
 
 const App = () => {
     return(
         <div className='ui container' style={{marginTop: '30px'}}>
-            <Navigation />
+            <Route component={Navigation} />
 
             {/* Access to Router Props NOT custom props */}
             {/* <Route path='/home' component={Home} />
@@ -28,6 +29,10 @@ const App = () => {
 
                 <Route path='/projects' render={(routerProps) => {
                     return <Projects {...routerProps} projectsData='This is data from projects component'/>
+                }}/>
+
+                <Route path='/detail/:id?' render={(routerProps) => {
+                    return <Detail {...routerProps} detailData='This is data from detail component'/>
                 }}/>
                 </Switch>
         </div>
