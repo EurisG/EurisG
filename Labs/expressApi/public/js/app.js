@@ -41,7 +41,11 @@ class App extends React.Component {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
+        console.log(data.data.newTodo)
+        this.setState({
+          description: '',
+          todos: [data.data.newTodo, ...this.state.todos]
+        })
       })
       .catch((error) => {
         console.error(error.message);
@@ -62,9 +66,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1> To Dos </h1>
+        <h1> To Do List </h1>
         <form onSubmit={this.handleFormSubmission}>
-          <label htmlFor="description">Description</label>
+          <label htmlFor="description">Add to list:</label>
+          {' '}
           <input
             type="text"
             value=""
@@ -72,10 +77,13 @@ class App extends React.Component {
             onChange={this.handleChange}
             value={this.state.description}
           />
+          {' '}
           <input type="submit" />
+         
         </form>
         <h2>{this.state.description}</h2>
         <hr />
+        <h2>My list</h2>
         <ul>
           {this.state.todos.map((todo, index) => {
             return (
@@ -87,9 +95,10 @@ class App extends React.Component {
                   }}
                 >
                   {" "}
-                  X{" "}
+                  Completed{" "}
                 </button>
-                <small> complete </small>
+                <br />
+                <small> (Need to complete) </small>
               </li>
             );
           })}
