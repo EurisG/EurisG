@@ -23,7 +23,9 @@ class App extends React.Component {
       fetch(`todos/${id}`, {method: 'DELETE'})
       .then(() => { this.setState({
         todos: [
+          // SLICE TO DETERMINE WHICH INDEX WAS CHOSEN
           ...this.state.todos.slice(0, index),
+          // SLICE INDEX THAT WAS CHOSEN AND DISPLAYING NEW ARRAY
           ...this.state.todos.slice(index + 1),
         ]
       })
@@ -41,7 +43,7 @@ class App extends React.Component {
                    {" "}
                   <button onClick={() => {
                     return this.deleteToDo(todo._id, index);
-                  }}> X </button>
+                  }}> Completed </button>
                   <br />
                   <small> (Need to complete) </small>
                 </li>
