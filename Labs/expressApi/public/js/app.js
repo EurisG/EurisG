@@ -17,9 +17,18 @@ class App extends React.Component {
         });
     }
 
-    // CREATE A DELETE TODO METHOD 
+    // CREATE A DELETE TODO METHOD to delete todos
     deleteToDo = (id, index) => {
-      console.log(id, index)
+      // console.log(id, index)
+      fetch(`todos/${id}`, {method: 'DELETE'})
+      .then(() => { this.setState({
+        todos: [
+          ...this.state.todos.slice(0, index),
+          ...this.state.todos.slice(index + 1),
+        ]
+      })
+       
+      })
     }
     render() {
       return (
@@ -33,7 +42,8 @@ class App extends React.Component {
                   <button onClick={() => {
                     return this.deleteToDo(todo._id, index);
                   }}> X </button>
-                  <small> complete </small>
+                  <br />
+                  <small> (Need to complete) </small>
                 </li>
               );
             })}
