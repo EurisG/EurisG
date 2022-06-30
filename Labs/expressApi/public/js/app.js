@@ -16,21 +16,29 @@ class App extends React.Component {
           console.error(error.message);
         });
     }
+
+    // CREATE A DELETE TODO METHOD 
+    deleteToDo = (id, index) => {
+      console.log(id, index)
+    }
     render() {
       return (
-        <table>
-          <tbody>
-            {this.state.todos.map((todo) => {
+        <ul>
+         
+            {this.state.todos.map((todo, index) => {
               return (
-                <tr>
-                  <td> {todo.description} </td>
-                  <td> X </td>
-                  <td> complete </td>
-                </tr>
+                <li>
+                   {todo.description} 
+                   {" "}
+                  <button onClick={() => {
+                    return this.deleteToDo(todo._id, index);
+                  }}> X </button>
+                  <small> complete </small>
+                </li>
               );
             })}
-          </tbody>
-        </table>
+          
+        </ul>
       );
     }
   }
