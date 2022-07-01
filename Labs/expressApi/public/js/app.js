@@ -1,4 +1,4 @@
-  // CREATE APP COMPONENT
+// CREATE APP COMPONENT
 class App extends React.Component {
   state = {
     todos: [],
@@ -25,14 +25,14 @@ class App extends React.Component {
   };
   // Lets create a method to help submit our form
   handleFormSubmission = (e) => {
-       // STOPS RELOADING THE PAGE AFTER SUBMITTING
     e.preventDefault();
     fetch("/todos", {
-        // changing description to a string in order to post
-      body: JSON.stringify({ description: this.state.description }),
+      body: JSON.stringify({
+        description: this.state.description,
+        complete: false,
+      }),
       method: "POST",
       headers: {
-          // CAN FIND HEADERS IN POSTMAN
         Accept: "application/json, text/plain, */*",
         "Content-Type": "application/json",
       },
@@ -41,11 +41,11 @@ class App extends React.Component {
         return response.json();
       })
       .then((data) => {
-        console.log(data.data.newTodo)
+        // console.log(data.data.newTodo);
         this.setState({
-          description: '',
-          todos: [data.data.newTodo, ...this.state.todos]
-        })
+          description: "",
+          todos: [data.data.newTodo, ...this.state.todos],
+        });
       })
       .catch((error) => {
         console.error(error.message);
@@ -53,7 +53,6 @@ class App extends React.Component {
   };
   // Create a delete todo method
   deleteToDo = (id, index) => {
-     // console.log(id, index)
     fetch(`todos/${id}`, { method: "DELETE" }).then(() => {
       this.setState({
         todos: [
@@ -63,42 +62,71 @@ class App extends React.Component {
       });
     });
   };
+  // Create a method to update the completion status
+  updateTodo = (todo, index) => {
+    // Change the completion status
+    todo.complete = !todo.complete;
+    console.log(todo);
+    fetch(`todos/${todo._id}`, {
+      body: JSON.stringify(todo),
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json, text/plain, */*",
+      },
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        this.setState({
+          todos: [...this.state.todos],
+        });
+      })
+      .catch((error) => {
+        console.error(error.message);
+      });
+  };
   render() {
     return (
       <div>
-        <h1> To Do List </h1>
+        <h1> To Dos </h1>
         <form onSubmit={this.handleFormSubmission}>
-          <label htmlFor="description">Add to list:</label>
-          {' '}
+          <label htmlFor="description">Description</label>
           <input
             type="text"
-            value=""
             id="description"
             onChange={this.handleChange}
             value={this.state.description}
           />
-          {' '}
           <input type="submit" />
-         
         </form>
         <h2>{this.state.description}</h2>
         <hr />
-        <h2>My list</h2>
         <ul>
           {this.state.todos.map((todo, index) => {
             return (
               <li>
-                {todo.description}{" "}
+                <div className={todo.complete ? "complete" : ""}>
+                  {todo.description}{" "}
+                </div>
                 <button
                   onClick={() => {
                     return this.deleteToDo(todo._id, index);
                   }}
                 >
                   {" "}
-                  Completed{" "}
+                  Delete{" "}
+                </button>{" "}
+                <button
+                  onClick={() => {
+                    return this.updateTodo(todo, index);
+                  }}
+                >
+                  {" "}
+                  Complete{" "}
                 </button>
-                <br />
-                <small> (Need to complete) </small>
               </li>
             );
           })}
